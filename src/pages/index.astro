@@ -1,0 +1,471 @@
+---
+const pageTitle = "Matt McGowan |  & Platform Engineering";
+const pageDescription =
+  "Infrastructure and platform engineering leader focused on reliability, systems, incident response, automation, and operational leadership.";
+
+const capabilities = [
+  {
+    title: "Reliability Engineering",
+    body:
+      "Incident response, production stability, MTTR reduction, monitoring, escalation paths, and operational ownership for distributed systems.",
+    icon: "activity"
+  },
+  {
+    title: "Platform & Infrastructure",
+    body:
+      "Linux, automation, CI/CD, infrastructure standardization, hybrid environments, and systems that support engineering teams instead of slowing them down.",
+    icon: "server"
+  },
+  {
+    title: "Technical Leadership",
+    body:
+      "Player-coach leadership, cross-functional coordination, executive communication, and calm decision-making during high-pressure operational events.",
+    icon: "users"
+  }
+];
+
+const projects = [
+  {
+    title: "NullorNaN Systems",
+    body:
+      "Selective infrastructure and platform consulting focused on reliability, automation, operational maturity, and practical engineering leadership.",
+    url: "https://nullornan.com",
+    logo: "nullornan"
+  },
+  {
+    title: "Dog House Cafe",
+    body:
+      "A community and content hub for builders, operators, and debuggers focused on real-world infrastructure stories and systems experience.",
+    url: "https://doghouse.cafe",
+    logo: "doghouse"
+  },
+  {
+    title: "GitHub",
+    body:
+      "Public repositories, CI/CD-driven sites, workflow experiments, and technical artifacts.",
+    url: "https://github.com/NullOrNaN",
+    logo: "github"
+  }
+];
+
+const proofCards = [
+  {
+    metric: "$2M+",
+    label: "AI cost savings",
+    meta: "Q4 2025 · NullorNaN",
+    body:
+      "Built governance, centralized controls, and automation for AI workloads.",
+    icon: "savings"
+  },
+  {
+    metric: "~50%",
+    label: "Downtime reduction",
+    meta: "Q2 2025 · NullorNaN",
+    body:
+      "Led Kubernetes-driven cloud transformation using elastic, immutable infrastructure patterns.",
+    icon: "platform"
+  },
+  {
+    metric: "4× Faster",
+    label: "Incident resolution",
+    meta: "Q2 2024 · ASRC Federal",
+    body:
+      "Led cross-functional incident command across infrastructure, database, security, and cloud teams.",
+    icon: "incident",
+    // metricValue: "~60 → ~15",
+    // metricUnit: "min"
+  },
+  {
+    metric: "~3x",
+    label: "Uptime improvement",
+    meta: "Q1 2023 · ASRC Federal",
+    body:
+      "Improved platform stability across 120+ systems through automation and configuration standardization.",
+    icon: "uptime"
+  }
+];
+
+const skillGroups = [
+  {
+    title: "Leadership",
+    icon: "leadership",
+    tags: [
+      "Cross-Functional Leadership",
+      "Program Leadership",
+      "Technical Leadership",
+      "Stakeholder Management",
+      "Vendor Management",
+      "Incident Management"
+    ]
+  },
+  {
+    title: "Platform",
+    icon: "platform",
+    tags: [
+      "Platform Engineering",
+      "SRE",
+      "Kubernetes",
+      "Linux",
+      "Terraform",
+      "Ansible"
+    ]
+  },
+  {
+    title: "Cloud / AI / Security",
+    icon: "security",
+    tags: [
+      "AWS",
+      "Cloud Transformation",
+      "AI Platforms",
+      "AI Cost Optimization",
+      "Zero Trust",
+      "Compliance"
+    ]
+  }
+];
+
+const closingLinks = [
+  {
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/matthewcmcgowan"
+  },
+  {
+    label: "GitHub",
+    url: "https://github.com/NullOrNaN"
+  },
+  {
+    label: "NullorNaN Systems",
+    url: "https://nullornan.com"
+  },
+  {
+    label: "Doghouse Cafe",
+    url: "https://doghouse.cafe"
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="theme-color" content="#0a0f14" />
+    <link rel="canonical" href="https://lethal.coffee/" />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header page-shell">
+      <div class="topbar">
+        <div class="brand">lethal.coffee</div>
+        <nav class="top-links" aria-label="Primary">
+          <a href="#what-i-do">What I Do</a>
+          <a href="#selected-work">Selected Work</a>
+          <a href="#highlights">Highlights</a>
+          <a href="#connect">Connect</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Matt McGowan</p>
+        <h2 id="hero-title">Infrastructure &amp; Platform Engineering Leader</h2>
+        <p class="hero-subheadline">Reliability, systems, and real-world operations.</p>
+        <p class="hero-body">
+          I build and operate production infrastructure, lead incident response, and design platforms that hold up under pressure.
+          <br/><br/>
+          My work sits at the intersection of Linux systems, reliability engineering, automation, and operational leadership.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href="https://www.linkedin.com/in/matthewcmcgowan"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Connect on LinkedIn
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://github.com/NullOrNaN"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View GitHub
+          </a>
+        </div>
+      </section>
+
+      <section id="what-i-do" aria-labelledby="what-i-do-title">
+        <div class="section-heading">
+          <!-- <p class="section-label">What I Do</p> -->
+          <h2 id="what-i-do-title">Operational depth, platform focus, leadership under pressure.</h2>
+        </div>
+        <div class="grid grid-three">
+          {capabilities.map((item) => (
+            <article class="card">
+              <div class="card-title-row">
+                {item.icon === "activity" && (
+                  <svg class="capability-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M3 12h4l2.25-5 4.5 10 2.25-5H21"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.75"
+                    />
+                  </svg>
+                )}
+                {item.icon === "server" && (
+                  <svg class="capability-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4 6.5h16v4H4Zm0 7h16v4H4Zm3-5h.01M7 15h.01"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.75"
+                    />
+                  </svg>
+                )}
+                {item.icon === "users" && (
+                  <svg class="capability-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM4 19a5 5 0 0 1 10 0m1.5 0a4.5 4.5 0 0 1 4.5-4.5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.75"
+                    />
+                  </svg>
+                )}
+                <h3>{item.title}</h3>
+              </div>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="selected-work" aria-labelledby="selected-work-title">
+        <div class="section-heading">
+          <!-- <p class="section-label">Selected Work</p> -->
+          <h2 id="selected-work-title">A few public entry points into the work.</h2>
+          <p>
+            A few public entry points into the work, projects, and systems thinking
+            behind the profile.
+          </p>
+        </div>
+        <div class="grid grid-three">
+          {projects.map((project) => (
+            <article class="card">
+              <div class="project-brand">
+                <span class="project-logo" aria-hidden="true">
+                  {project.logo === "nullornan" && (
+                    // <svg viewBox="0 0 32 32">
+                    //   <path
+                    //     d="M7 24V8l6.5 10V8H17v16l-6.5-10V24H7Zm13.5 0c-3.04 0-5.5-2.46-5.5-5.5S17.46 13 20.5 13 26 15.46 26 18.5 23.54 24 20.5 24Zm0-3c1.38 0 2.5-1.12 2.5-2.5S21.88 16 20.5 16 18 17.12 18 18.5 19.12 21 20.5 21Z"
+                    //     fill="currentColor"
+                    //   />
+                    // </svg>
+                    <img class="project-logo" src="/assets/images/nullornan.webp" alt="NullorNaN Systems logo" />
+                  )}
+                  {project.logo === "doghouse" && (
+                    // <svg viewBox="0 0 32 32">
+                    //   <path
+                    //     d="M6 15.5 16 7l10 8.5V24h-5v-5h-4v5H6v-8.5Zm8-2.5h4"
+                    //     fill="none"
+                    //     stroke="currentColor"
+                    //     stroke-linecap="round"
+                    //     stroke-linejoin="round"
+                    //     stroke-width="2"
+                    //   />
+                    //   <path
+                    //     d="M11.5 19.5c0-1.66 1.57-3 3.5-3s3.5 1.34 3.5 3"
+                    //     fill="none"
+                    //     stroke="currentColor"
+                    //     stroke-linecap="round"
+                    //     stroke-width="2"
+                    //   />
+                    // </svg>
+                    <img class="project-logo" src="/assets/images/doghouse.png" alt="Doghouse Cafe logo" />
+                  )}
+                  {project.logo === "github" && (
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.08c-3.13.68-3.79-1.33-3.79-1.33-.5-1.28-1.21-1.62-1.21-1.62-.98-.67.08-.65.08-.65 1.08.08 1.65 1.1 1.65 1.1.96 1.64 2.52 1.17 3.13.9.1-.7.37-1.17.67-1.44-2.5-.28-5.12-1.25-5.12-5.57 0-1.23.44-2.24 1.16-3.02-.12-.28-.5-1.4.11-2.91 0 0 .95-.3 3.12 1.16a10.8 10.8 0 0 1 5.68 0c2.16-1.46 3.11-1.16 3.11-1.16.62 1.51.24 2.63.12 2.91.72.78 1.15 1.79 1.15 3.02 0 4.33-2.62 5.28-5.13 5.55.39.34.73 1.01.73 2.04v3.02c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  )}
+                </span>
+                <h3>{project.title}</h3>
+              </div>
+              <p>{project.body}</p>
+              <a
+                class="card-link"
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="highlights" aria-labelledby="highlights-title">
+        <div class="section-heading">
+          <!-- <p class="section-label">Operating Highlights</p> -->
+          <h2 id="highlights-title">Concise proof points from real operating environments.</h2>
+        </div>
+        <div class="proof-section">
+          <div class="proof-grid">
+            {proofCards.map((card) => (
+              <article class="proof-card">
+                <div class="proof-card-header">
+                  <div>
+                    <div class="proof-metric">
+                      {card.metricValue ? card.metricValue : card.metric}
+                      {card.metricUnit && (
+                        <span class="proof-metric-unit">{card.metricUnit}</span>
+                      )}
+                    </div>
+                    <h3 class="proof-title">{card.label}</h3>
+                  </div>
+                  {card.icon === "savings" && (
+                    <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 3v18M8.5 7.5c0-1.38 1.57-2.5 3.5-2.5s3.5 1.12 3.5 2.5S13.93 10 12 10 8.5 8.88 8.5 7.5Zm0 9c0 1.38 1.57 2.5 3.5 2.5s3.5-1.12 3.5-2.5S13.93 14 12 14s-3.5 1.12-3.5 2.5Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )}
+                  {card.icon === "platform" && (
+                    <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 3 4.5 7v10L12 21l7.5-4V7L12 3Zm0 0v18M4.5 7 12 11l7.5-4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )}
+                  {card.icon === "incident" && (
+                    <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 4 4 8v5c0 4.6 2.9 6.95 8 8 5.1-1.05 8-3.4 8-8V8l-8-4Zm0 4v5m0 3h.01"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )}
+                  {card.icon === "uptime" && (
+                    <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M4 15h4l2-5 4 8 2-5h4M5 19h14M12 5v3"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )}
+                </div>
+                <p class="proof-meta">{card.meta}</p>
+                <p class="proof-description">{card.body}</p>
+              </article>
+            ))}
+          </div>
+
+          <div class="skills-cluster" aria-label="Skills clusters">
+            {skillGroups.map((group) => (
+              <section class="skill-group" aria-labelledby={`${group.icon}-skills-title`}>
+                <div class="skill-group-header">
+                  {group.icon === "leadership" && (
+                    <svg class="skill-group-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm8 2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3.5 19a4.5 4.5 0 0 1 9 0m1.5 0a4 4 0 0 1 6.5-3.1"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )}
+                  {group.icon === "platform" && (
+                    <svg class="skill-group-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 3 5 7v10l7 4 7-4V7l-7-4Zm-4 6h8m-8 3h8m-8 3h5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )}
+                  {group.icon === "security" && (
+                    <svg class="skill-group-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 3 5 6.5V12c0 4.37 2.74 7.03 7 9 4.26-1.97 7-4.63 7-9V6.5L12 3Zm-2.5 9 1.7 1.7 3.8-4.2"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )}
+                  <h3 id={`${group.icon}-skills-title`}>{group.title}</h3>
+                </div>
+                <div class="skill-tags">
+                  {group.tags.map((tag) => <span class="skill-tag">{tag}</span>)}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="connect" aria-labelledby="connect-title" class="closing">
+        <div class="section-heading">
+          <!-- <p class="section-label">Looking for the thread?</p> -->
+          <h2 id="connect-title">Follow the lane that matches the question.</h2>
+        </div>
+        <p class="closing-copy">
+          Start with LinkedIn for the professional profile, GitHub for the technical
+          artifacts, NullorNaN for consulting context, or Doghouse Cafe for community
+          and writing.
+        </p>
+        <div class="link-list" aria-label="External links">
+          {closingLinks.map((link) => (
+            <a href={link.url} target="_blank" rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-shell">
+      <p>&copy; 2026 Matt McGowan. Built as a lightweight identity hub.</p>
+    </footer>
+  </body>
+</html>

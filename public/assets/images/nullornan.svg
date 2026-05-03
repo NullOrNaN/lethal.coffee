@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 260 120"
+     role="img"
+     aria-labelledby="title">
+
+    <title id="title">NullorNaN Systems</title>
+    <defs>
+    <linearGradient id="wordmark-main" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--logo-main-start, #e6edf3)" />
+        <stop offset="50%" stop-color="var(--logo-main-mid, #f8fafc)" />
+        <stop offset="100%" stop-color="var(--logo-main-end, #c7d6e6)" />
+    </linearGradient>
+
+    <linearGradient id="wordmark-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--logo-accent-start, #7dd3fc)" />
+        <stop offset="55%" stop-color="var(--logo-accent-mid, #38bdf8)" />
+        <stop offset="100%" stop-color="var(--logo-accent-end, #60a5fa)" />
+    </linearGradient>
+    </defs>
+<!-- 
+  <defs>
+    <linearGradient id="navmark-main" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e6edf3" />
+      <stop offset="50%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#c7d6e6" />
+    </linearGradient>
+
+    <linearGradient id="navmark-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="55%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+  </defs> -->
+
+  <text x="50%"
+        y`="52%"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="72"
+        font-weight="800"
+        letter-spacing="-4">
+
+    <tspan fill="url(#navmark-main)">N</tspan>
+    <tspan fill="url(#navmark-accent)" font-size="64" font-weight="700" dx="-2">a</tspan>
+    <tspan fill="url(#navmark-main)" dx="-2">N</tspan>
+
+  </text>
+</svg>
