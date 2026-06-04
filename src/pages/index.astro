@@ -1,26 +1,40 @@
 ---
-const pageTitle = "Matt McGowan |  & Platform Engineering";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
+
+const displayName = 'Matt "Lethal Coffee" McGowan';
+const logoWidths = [32, 48, 64, 96];
+const profileWidths = [160, 200, 320, 400];
+const logoSizes = "32px";
+const profileSizes = "(max-width: 640px) 140px, (max-width: 900px) 160px, 200px";
+const pageTitle =
+  `${displayName} | Co-Founder, CTO & COO · Infrastructure & Platform Leader`;
 const pageDescription =
-  "Infrastructure and platform engineering leader focused on reliability, systems, incident response, automation, and operational leadership.";
+  "Co-Founder, CTO & COO at OUR+'R Technologies. Technical operator for seed-stage teams, fractional leadership, and boutique infrastructure consulting — plus Reliability Lounge.";
+const roleLines = [
+  "Co-Founder, CTO & COO (OUR+'R Technologies) · Founder & Managing Director (NullorNaN)",
+  "Founder, Infrastructure & Platform (Reliability Lounge)"
+];
+const mattmcgUrl = "https://mattmcg.com";
+const ourPlusRUrl = "https://ourplusr.com";
 
 const capabilities = [
   {
-    title: "Reliability Engineering",
+    title: "Org & Technical Leadership",
     body:
-      "Incident response, production stability, MTTR reduction, monitoring, escalation paths, and operational ownership for distributed systems.",
+      "Co-founder and operator leadership across engineering, product, and business operations — org design, executive alignment, vendor strategy, and accountable ownership when systems are on fire.",
+    icon: "users"
+  },
+  {
+    title: "Advisory & Fractional Leadership",
+    body:
+      "Seed-stage and growth teams, plus selective engagements: fractional CTO/COO, board-ready updates, operating cadence, and hands-on leadership without becoming permanent headcount.",
     icon: "activity"
   },
   {
-    title: "Platform & Infrastructure",
+    title: "Platform & Reliability Strategy",
     body:
-      "Linux, automation, CI/CD, infrastructure standardization, hybrid environments, and systems that support engineering teams instead of slowing them down.",
+      "Infrastructure and reliability programs at scale — incident command, production stability, platform roadmaps, and Linux-grounded judgment that keeps engineering velocity and risk in balance.",
     icon: "server"
-  },
-  {
-    title: "Technical Leadership",
-    body:
-      "Player-coach leadership, cross-functional coordination, executive communication, and calm decision-making during high-pressure operational events.",
-    icon: "users"
   }
 ];
 
@@ -33,54 +47,52 @@ const projects = [
     logo: "nullornan"
   },
   {
-    title: "Dog House Cafe",
+    title: "Reliability Lounge",
     body:
-      "A community and content hub for builders, operators, and debuggers focused on real-world infrastructure stories and systems experience.",
+      "An operator community and content hub for builders focused on real-world infrastructure stories, reliability practice, and systems experience.",
     url: "https://doghouse.cafe",
-    logo: "doghouse"
+    logo: "reliability-lounge"
   },
   {
-    title: "GitHub",
+    title: "OUR+'R Technologies",
     body:
-      "Public repositories, CI/CD-driven sites, workflow experiments, and technical artifacts.",
-    url: "https://github.com/NullOrNaN",
-    logo: "github"
+      "Rideshare SaaS focused on safety and sustainability — co-founded and led as technical operator across product, platform, and company operations.",
+    url: ourPlusRUrl,
+    logo: "our-plus-r"
   }
 ];
 
 const proofCards = [
   {
     metric: "$2M+",
-    label: "AI cost savings",
-    meta: "Q4 2025 · NullorNaN",
+    label: "AI spend governed",
+    meta: "Q4 2025 · NullorNaN Advisory",
     body:
-      "Built governance, centralized controls, and automation for AI workloads.",
+      "Led executive AI cost governance — policy, centralized controls, and accountable spend ownership across the organization.",
     icon: "savings"
   },
   {
     metric: "~50%",
-    label: "Downtime reduction",
-    meta: "Q2 2025 · NullorNaN",
+    label: "Downtime reduced",
+    meta: "Q2 2025 · NullorNaN Advisory",
     body:
-      "Led Kubernetes-driven cloud transformation using elastic, immutable infrastructure patterns.",
+      "Directed a cloud and reliability transformation program with clear executive sponsorship and measurable production outcomes.",
     icon: "platform"
   },
   {
     metric: "4× Faster",
-    label: "Incident resolution",
+    label: "Incident command",
     meta: "Q2 2024 · ASRC Federal",
     body:
-      "Led cross-functional incident command across infrastructure, database, security, and cloud teams.",
-    icon: "incident",
-    // metricValue: "~60 → ~15",
-    // metricUnit: "min"
+      "Stood up cross-functional incident leadership across infrastructure, data, security, and cloud — faster resolution with clearer accountability.",
+    icon: "incident"
   },
   {
-    metric: "~3x",
-    label: "Uptime improvement",
+    metric: "~3×",
+    label: "Uptime improved",
     meta: "Q1 2023 · ASRC Federal",
     body:
-      "Improved platform stability across 120+ systems through automation and configuration standardization.",
+      "Owned a platform stability initiative across 120+ systems — prioritization, standards, and program leadership that moved uptime materially.",
     icon: "uptime"
   }
 ];
@@ -102,43 +114,45 @@ const skillGroups = [
     title: "Platform",
     icon: "platform",
     tags: [
-      "Platform Engineering",
-      "SRE",
-      "Kubernetes",
       "Linux",
-      "Terraform",
-      "Ansible"
+      "Platform Strategy",
+      "Reliability Programs",
+      "Infrastructure at Scale",
+      "Operational Excellence"
     ]
   },
   {
-    title: "Cloud / AI / Security",
+    title: "Cloud, AI & Security",
     icon: "security",
     tags: [
-      "AWS",
       "Cloud Transformation",
-      "AI Platforms",
+      "AI Governance",
       "AI Cost Optimization",
-      "Zero Trust",
-      "Compliance"
+      "Security Programs",
+      "Compliance & Risk"
     ]
   }
 ];
 
 const closingLinks = [
   {
+    label: "mattmcg.com",
+    url: mattmcgUrl
+  },
+  {
     label: "LinkedIn",
     url: "https://www.linkedin.com/in/matthewcmcgowan"
   },
   {
-    label: "GitHub",
-    url: "https://github.com/NullOrNaN"
+    label: "OUR+'R Technologies",
+    url: ourPlusRUrl
   },
   {
     label: "NullorNaN Systems",
     url: "https://nullornan.com"
   },
   {
-    label: "Dog House Cafe",
+    label: "Reliability Lounge",
     url: "https://doghouse.cafe"
   }
 ];
@@ -158,7 +172,9 @@ const closingLinks = [
   <body>
     <header class="site-header page-shell">
       <div class="topbar">
-        <div class="brand">lethal.coffee</div>
+        <div class="brand brand--name" title="Why lethal.coffee? I can drink a lot of coffee and feel almost none of it.">
+          {displayName}
+        </div>
         <nav class="top-links" aria-label="Primary">
           <a href="#what-i-do">What I Do</a>
           <a href="#selected-work">Selected Work</a>
@@ -170,14 +186,23 @@ const closingLinks = [
 
     <main class="page-shell">
       <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-header">
+          <p class="eyebrow">{displayName}</p>
+          <h2 id="hero-title">Co-Founder, CTO &amp; COO · Infrastructure &amp; Platform Leader</h2>
+          <div class="hero-roles" aria-label="Current roles">
+            {roleLines.map((line) => (
+              <p>{line}</p>
+            ))}
+          </div>
+        </div>
         <div class="hero-copy">
-          <p class="eyebrow">Matt McGowan</p>
-          <h2 id="hero-title">Infrastructure &amp; Platform Engineering Leader</h2>
-          <p class="hero-subheadline">Reliability, systems, and real-world operations.</p>
+          <p class="hero-nickname-note">
+            <strong>Lethal Coffee</strong> is the nickname: I can drink a ton of coffee and have near-zero effect on me — hence lethal.coffee.
+          </p>
           <p class="hero-body">
-            I build and operate production infrastructure, lead incident response, and design platforms that hold up under pressure.
+            I build and operate production infrastructure, lead incident response, and design platforms that hold up under pressure — as a technical co-founder and operator across product, consulting, and community.
             <br/><br/>
-            My work sits at the intersection of Linux systems, reliability engineering, automation, and operational leadership.
+            Open to seed-stage conversations, fractional CTO/COO and platform leadership, and selective consulting. My work sits at the intersection of Linux systems, reliability engineering, automation, and executive-level operational leadership.
           </p>
           <div class="hero-actions">
             <a
@@ -190,22 +215,24 @@ const closingLinks = [
             </a>
             <a
               class="button button-secondary"
-              href="https://github.com/NullOrNaN"
+              href={ourPlusRUrl}
               target="_blank"
               rel="noreferrer"
             >
-              View GitHub
+              OUR+'R Technologies
             </a>
           </div>
         </div>
         <div class="hero-media">
-          <img
+          <ResponsiveImage
             class="hero-profile"
-            src="/assets/images/profile.webp"
-            alt="Matt McGowan profile"
-            loading="lazy"
-            width="200"
-            height="200"
+            base="/assets/images/profile/profile"
+            widths={profileWidths}
+            sizes={profileSizes}
+            alt={`${displayName} profile`}
+            width={200}
+            height={200}
+            loading="eager"
           />
         </div>
       </section>
@@ -213,7 +240,7 @@ const closingLinks = [
       <section id="what-i-do" aria-labelledby="what-i-do-title">
         <div class="section-heading">
           <!-- <p class="section-label">What I Do</p> -->
-          <h2 id="what-i-do-title">Operational depth, platform focus, leadership under pressure.</h2>
+          <h2 id="what-i-do-title">Org leadership, advisory work, and platform strategy under pressure.</h2>
         </div>
         <div class="grid grid-three">
           {capabilities.map((item) => (
@@ -268,8 +295,7 @@ const closingLinks = [
           <!-- <p class="section-label">Selected Work</p> -->
           <h2 id="selected-work-title">A few public entry points into the work.</h2>
           <p>
-            A few public entry points into the work, projects, and systems thinking
-            behind the profile.
+            Public entry points into consulting, community, and the technical work behind the profile.
           </p>
         </div>
         <div class="grid grid-three">
@@ -284,9 +310,17 @@ const closingLinks = [
                     //     fill="currentColor"
                     //   />
                     // </svg>
-                    <img class="project-logo" src="/assets/images/nullornan.webp" alt="NullorNaN Systems logo" />
+                    <ResponsiveImage
+                      class="project-logo-img"
+                      base="/assets/images/nullornan/nullornan"
+                      widths={logoWidths}
+                      sizes={logoSizes}
+                      alt="NullorNaN Systems logo"
+                      width={32}
+                      height={32}
+                    />
                   )}
-                  {project.logo === "doghouse" && (
+                  {project.logo === "reliability-lounge" && (
                     // <svg viewBox="0 0 32 32">
                     //   <path
                     //     d="M6 15.5 16 7l10 8.5V24h-5v-5h-4v5H6v-8.5Zm8-2.5h4"
@@ -304,15 +338,26 @@ const closingLinks = [
                     //     stroke-width="2"
                     //   />
                     // </svg>
-                    <img class="project-logo" src="/assets/images/doghouse.png" alt="Doghouse Cafe logo" />
+                    <ResponsiveImage
+                      class="project-logo-img"
+                      base="/assets/images/reliability-lounge/reliability-lounge"
+                      widths={logoWidths}
+                      sizes={logoSizes}
+                      alt="Reliability Lounge logo"
+                      width={32}
+                      height={32}
+                    />
                   )}
-                  {project.logo === "github" && (
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.08c-3.13.68-3.79-1.33-3.79-1.33-.5-1.28-1.21-1.62-1.21-1.62-.98-.67.08-.65.08-.65 1.08.08 1.65 1.1 1.65 1.1.96 1.64 2.52 1.17 3.13.9.1-.7.37-1.17.67-1.44-2.5-.28-5.12-1.25-5.12-5.57 0-1.23.44-2.24 1.16-3.02-.12-.28-.5-1.4.11-2.91 0 0 .95-.3 3.12 1.16a10.8 10.8 0 0 1 5.68 0c2.16-1.46 3.11-1.16 3.11-1.16.62 1.51.24 2.63.12 2.91.72.78 1.15 1.79 1.15 3.02 0 4.33-2.62 5.28-5.13 5.55.39.34.73 1.01.73 2.04v3.02c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"
-                        fill="currentColor"
-                      />
-                    </svg>
+                  {project.logo === "our-plus-r" && (
+                    <ResponsiveImage
+                      class="project-logo-img"
+                      base="/assets/images/our-plus-r/our-plus-r"
+                      widths={logoWidths}
+                      sizes={logoSizes}
+                      alt="OUR+'R Technologies logo"
+                      width={32}
+                      height={32}
+                    />
                   )}
                 </span>
                 <h3>{project.title}</h3>
@@ -334,7 +379,7 @@ const closingLinks = [
       <section id="highlights" aria-labelledby="highlights-title">
         <div class="section-heading">
           <!-- <p class="section-label">Operating Highlights</p> -->
-          <h2 id="highlights-title">Concise proof points from real operating environments.</h2>
+          <h2 id="highlights-title">Leadership outcomes from real operating environments.</h2>
         </div>
         <div class="proof-section">
           <div class="proof-grid">
@@ -462,9 +507,8 @@ const closingLinks = [
           <h2 id="connect-title">Follow the lane that matches the question.</h2>
         </div>
         <p class="closing-copy">
-          Start with LinkedIn for the professional profile, GitHub for the technical
-          artifacts, NullorNaN for consulting context, or Dog House Cafe for community
-          and writing.
+          Start at mattmcg.com for the primary hub. LinkedIn for seed conversations and fractional work,
+          OUR+'R Technologies for the company, NullorNaN for consulting, or Reliability Lounge for community and writing.
         </p>
         <div class="link-list" aria-label="External links">
           {closingLinks.map((link) => (
@@ -477,7 +521,10 @@ const closingLinks = [
     </main>
 
     <footer class="page-shell">
-      <p>&copy; 2026 Matt McGowan. Built as a lightweight identity hub.</p>
+      <p>
+        &copy; 2026 {displayName}.
+        <a href={mattmcgUrl}>mattmcg.com</a> is the primary entry point. Also on lethal.coffee.
+      </p>
     </footer>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1bd1d7c50244959b719cc3bbf367dbd"}'></script><!-- End Cloudflare Web Analytics -->
   </body>

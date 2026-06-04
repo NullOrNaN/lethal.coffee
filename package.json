@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "npm run optimize:images && astro build",
+    "preview": "astro preview",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "astro": "^6.2.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }

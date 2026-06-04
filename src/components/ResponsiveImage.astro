@@ -1,0 +1,39 @@
+---
+interface Props {
+  base: string;
+  alt: string;
+  widths: number[];
+  sizes: string;
+  class?: string;
+  width: number;
+  height: number;
+  loading?: "lazy" | "eager";
+}
+
+const {
+  base,
+  alt,
+  widths,
+  sizes,
+  class: className,
+  width,
+  height,
+  loading = "lazy"
+} = Astro.props;
+
+const defaultWidth = widths[widths.length - 1];
+const src = `${base}-${defaultWidth}.webp`;
+const srcset = widths.map((w) => `${base}-${w}.webp ${w}w`).join(", ");
+---
+
+<img
+  class={className}
+  src={src}
+  srcset={srcset}
+  sizes={sizes}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding="async"
+/>
