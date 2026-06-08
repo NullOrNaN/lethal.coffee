@@ -170,18 +170,22 @@ const closingLinks = [
     <link rel="canonical" href="https://lethal.coffee/" />
     <link rel="stylesheet" href="/assets/styles/main.css" />
   </head>
-  <body>
-    <header class="site-header page-shell">
-      <div class="topbar">
+  <body class="skip-target">
+    <!-- Skip-to-content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">
+      Skip to main content
+    </a>
+    <header class="site-header page-shell" id="top-of-page">
+      <div class="topbar" id="nav-top">
         <div class="brand brand--name" title="Why lethal.coffee? I can drink a lot of coffee and feel almost none of it.">
           {displayName}
         </div>
         <nav class="top-links" aria-label="Primary">
-          <a href="#what-i-do">What I Do</a>
-          <a href="#selected-work">Selected Work</a>
-          <a href="#highlights">Highlights</a>
-          <a href="#connect">Connect</a>
-          <a href={nanConnectUrl} target="_blank" rel="noreferrer">The NaN Connect</a>
+          <a href="#what-i-do" aria-label="Navigate to What I Do section">What I Do</a>
+          <a href="#selected-work" aria-label="Navigate to Selected Work section">Selected Work</a>
+          <a href="#highlights" aria-label="Navigate to Highlights section">Highlights</a>
+          <a href="#connect" aria-label="Navigate to Connect section">Connect</a>
+          <a href={nanConnectUrl} target="_blank" rel="noreferrer" aria-label="Open The NaN Connect portal in a new tab">The NaN Connect</a>
         </nav>
       </div>
     </header>
@@ -212,6 +216,7 @@ const closingLinks = [
               href="https://www.linkedin.com/in/matthewcmcgowan"
               target="_blank"
               rel="noreferrer"
+              aria-label="Connect with Matt on LinkedIn"
             >
               Connect on LinkedIn
             </a>
@@ -220,6 +225,7 @@ const closingLinks = [
               href="https://nullornan.com"
               target="_blank"
               rel="noreferrer"
+              aria-label="Visit NullorNaN Systems"
             >
               NullorNaN
             </a>
@@ -390,10 +396,7 @@ const closingLinks = [
                 <div class="proof-card-header">
                   <div>
                     <div class="proof-metric">
-                      {card.metricValue ? card.metricValue : card.metric}
-                      {card.metricUnit && (
-                        <span class="proof-metric-unit">{card.metricUnit}</span>
-                      )}
+                      {card.metric}
                     </div>
                     <h3 class="proof-title">{card.label}</h3>
                   </div>
@@ -523,7 +526,7 @@ const closingLinks = [
     </main>
 
     <footer class="page-shell">
-      <p>
+      <p id="main-content" aria-live="polite">
         &copy; 2026 {displayName}.
         <a href={mattmcgUrl}>mattmcg.com</a> is the primary entry point. Also on lethal.coffee.
       </p>

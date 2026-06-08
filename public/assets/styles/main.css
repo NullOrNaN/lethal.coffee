@@ -23,6 +23,74 @@
        box-sizing: border-box;
    }
 
+  /* Skip link for keyboard navigation */
+  .skip-link {
+    position: absolute;
+    top: -4rem;
+    left: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--accent-strong);
+    color: #020409;
+    font-weight: 600;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    text-decoration: none;
+    opacity: 0;
+    transition: top 200ms ease, opacity 200ms ease;
+  }
+
+  .skip-link:focus {
+    top: 0.5rem;
+    opacity: 1;
+  }
+
+  body.skip-target {
+    margin-top: 4rem; /* Make room for skip link when focused */
+  }
+
+  /* Ensure all interactive elements have visible focus states */
+  a:focus-visible,
+  button:focus-visible,
+  .button:focus-visible,
+  .card-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Focus visible on all links with no focus state defined */
+  .top-links a:focus-visible,
+  .link-list a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --border-strong: rgba(255, 255, 255, 0.4);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline-width: 3px;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .hero-profile:hover,
+    .button:hover,
+    .card:hover,
+    .skip-link {
+      transition: none;
+    }
+  }
+
    html {
        scroll-behavior: smooth;
        -webkit-text-size-adjust: 100%;

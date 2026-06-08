@@ -1,10 +1,13 @@
----
+/**
+ * ResponsiveImage component that delivers WebP images with multi-size srcset support.
+ * Optimizes bandwidth by serving appropriately-sized images based on viewport.
+ */
 interface Props {
   base: string;
   alt: string;
   widths: number[];
   sizes: string;
-  class?: string;
+  className?: string;
   width: number;
   height: number;
   loading?: "lazy" | "eager";
@@ -15,7 +18,7 @@ const {
   alt,
   widths,
   sizes,
-  class: className,
+  className,
   width,
   height,
   loading = "lazy"
