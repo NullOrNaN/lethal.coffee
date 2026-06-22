@@ -1,0 +1,108 @@
+---
+const pageTitle = "Matt McGowan · Connect";
+const pageDescription =
+  "Find the right lane. Direct routing to the right destination based on what you need — no contact form.";
+
+const routes = [
+  {
+    title: "Fractional CTO/COO or advisory work",
+    body: "Boutique infrastructure and platform leadership engagements.",
+    url: "https://nullornan.com",
+    cta: "nullornan.com"
+  },
+  {
+    title: "Connect or network",
+    body: "LinkedIn for professional conversations and connections.",
+    url: "https://www.linkedin.com/in/matthewcmcgowan",
+    cta: "linkedin.com/in/matthewcmcgowan"
+  },
+  {
+    title: "Talk about my ventures",
+    body: "Book time to discuss OUR+'R, NullOrNaN, or Reliability Lounge.",
+    url: "https://app.reclaim.ai/m/nan-connects",
+    cta: "NaN Connects — Book time"
+  },
+  {
+    title: "Operator content and reliability writing",
+    body: "Reliability Lounge — community and essays for infrastructure builders.",
+    url: "https://reliabilitylounge.com",
+    cta: "reliabilitylounge.com"
+  },
+  {
+    title: "Code and technical projects",
+    body: "GitHub — hobbyist to professional infrastructure and platform work.",
+    url: "https://github.com/NullOrNaN",
+    cta: "github.com/NullOrNaN"
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="theme-color" content="#0a0f14" />
+    <link rel="canonical" href="https://lethal.coffee/connect" />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header page-shell">
+      <div class="topbar">
+        <a class="brand" href="/">lethal.coffee</a>
+        <nav class="top-links" aria-label="Primary">
+          <a href="/about">About</a>
+          <a href="/#ventures">Ventures</a>
+          <a href="/#where-to-go">Where to Go</a>
+          <a href="/#proof">Proof Points</a>
+          <a href="/connect" aria-current="page">Connect</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="connect-hero">
+        <p class="eyebrow">Matt McGowan</p>
+        <h1 class="connect-title">Find the right lane.</h1>
+        <p class="connect-sub">No contact form. No email capture. Just direct routing based on what you need.</p>
+      </section>
+
+      <section aria-label="Routing options">
+        <ol class="connect-list" role="list">
+          {routes.map((r, i) => (
+            <li>
+              <a class="connect-card" href={r.url} target="_blank" rel="noopener noreferrer">
+                <span class="connect-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <span class="connect-body">
+                  <span class="connect-title-row">{r.title}</span>
+                  <span class="connect-desc">{r.body}</span>
+                </span>
+                <span class="connect-cta">{r.cta} →</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer page-shell">
+      <div class="footer-inner">
+        <p class="footer-name">Matt McGowan</p>
+        <nav class="footer-links" aria-label="External links">
+          <a href="https://lethal.coffee" target="_blank" rel="noopener noreferrer">lethal.coffee</a>
+          <a href="https://nullornan.com" target="_blank" rel="noopener noreferrer">nullornan.com</a>
+          <a href="https://www.linkedin.com/in/matthewcmcgowan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://reliabilitylounge.com" target="_blank" rel="noopener noreferrer">reliabilitylounge.com</a>
+          <a href="https://github.com/NullOrNaN" target="_blank" rel="noopener noreferrer">github.com/NullOrNaN</a>
+          <a href="https://app.reclaim.ai/m/nan-connects" target="_blank" rel="noopener noreferrer">Book a Call</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 Matt McGowan</p>
+      </div>
+    </footer>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c1bd1d7c50244959b719cc3bbf367dbd"}'></script>
+  </body>
+</html>

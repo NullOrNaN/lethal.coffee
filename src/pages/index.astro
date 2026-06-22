@@ -1,7 +1,7 @@
 ---
 const pageTitle = "Matt McGowan";
 const pageDescription =
-  "Co-Founder, CTO & COO · Infrastructure & Platform Leader. Identity hub for Matt McGowan — find the right lane below.";
+  "Co-Founder, CTO & COO. Infrastructure and platform leader. Identity hub — find the right lane.";
 
 const vehicles = [
   {
@@ -92,10 +92,11 @@ const metrics = [
 ];
 
 const footerLinks = [
-  { label: "NullOrNaN Systems", url: "https://nullornan.com" },
-  { label: "Reliability Lounge", url: "https://reliabilitylounge.com" },
+  { label: "lethal.coffee", url: "https://lethal.coffee" },
+  { label: "nullornan.com", url: "https://nullornan.com" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/matthewcmcgowan" },
-  { label: "GitHub", url: "https://github.com/NullOrNaN" },
+  { label: "reliabilitylounge.com", url: "https://reliabilitylounge.com" },
+  { label: "github.com/NullOrNaN", url: "https://github.com/NullOrNaN" },
   { label: "Book a Call", url: "https://app.reclaim.ai/m/nan-connects" }
 ];
 ---
@@ -114,11 +115,13 @@ const footerLinks = [
   <body>
     <header class="site-header page-shell">
       <div class="topbar">
-        <div class="brand">lethal.coffee</div>
+        <a class="brand" href="/">lethal.coffee</a>
         <nav class="top-links" aria-label="Primary">
+          <a href="/about">About</a>
           <a href="#ventures">Ventures</a>
           <a href="#where-to-go">Where to Go</a>
           <a href="#proof">Proof Points</a>
+          <a href="/connect">Connect</a>
         </nav>
       </div>
     </header>
@@ -175,7 +178,7 @@ const footerLinks = [
               </div>
               <p>{v.body}</p>
               {v.url && (
-                <a class="card-link" href={v.url} target="_blank" rel="noreferrer">Visit →</a>
+                <a class="card-link" href={v.url} target="_blank" rel="noopener noreferrer">Visit →</a>
               )}
             </article>
           ))}
@@ -189,7 +192,7 @@ const footerLinks = [
         </div>
         <div class="route-list">
           {routes.map((r) => (
-            <a class="route-row" href={r.url} target="_blank" rel="noreferrer">
+            <a class="route-row" href={r.url} target="_blank" rel="noopener noreferrer">
               <div class="route-intent">
                 <span class="route-primary">{r.intent}</span>
                 <span class="route-sub">{r.sub}</span>
@@ -224,7 +227,7 @@ const footerLinks = [
         <p class="footer-name">Matt McGowan</p>
         <nav class="footer-links" aria-label="External links">
           {footerLinks.map((l) => (
-            <a href={l.url} target="_blank" rel="noreferrer">{l.label}</a>
+            <a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>
           ))}
         </nav>
         <p class="footer-copy">&copy; 2026 Matt McGowan</p>
