@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lethal.coffee/sitemap-index.xml

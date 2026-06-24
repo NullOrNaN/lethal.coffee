@@ -1,161 +1,110 @@
 ---
 import ResponsiveImage from "../components/ResponsiveImage.astro";
 
-const displayName = 'Matt "Lethal Coffee" McGowan';
-const logoWidths = [32, 48, 64, 96];
-const profileWidths = [160, 200, 320, 400];
-const logoSizes = "32px";
-const profileSizes = "(max-width: 640px) 140px, (max-width: 900px) 160px, 200px";
-const pageTitle =
-  `${displayName} | Co-Founder, CTO & COO · Infrastructure & Platform Leader`;
+const pageTitle = "Matt McGowan";
 const pageDescription =
-  "Co-Founder, CTO & COO at OUR+'R Technologies. Technical operator for seed-stage teams, fractional leadership, and boutique infrastructure consulting — plus Reliability Lounge.";
-const roleLines = [
-  "Co-Founder, CTO & COO (OUR+'R Technologies) · Founder & Managing Director (NullorNaN)",
-  "Founder, Infrastructure & Platform (Reliability Lounge)"
-];
-const mattmcgUrl = "https://mattmcg.com";
+  "Co-Founder, CTO & COO. Infrastructure and platform leader. Identity hub — find the right lane.";
+
+const profileWidths = [160, 200, 320, 400];
+const profileSizes = "(max-width: 640px) 140px, (max-width: 900px) 160px, 200px";
 const ourPlusRUrl = "https://getride.plus";
-const nanConnectUrl = "https://app.reclaim.ai/m/nullornan-systems/connect";
 
-const capabilities = [
+const vehicles = [
   {
-    title: "Org & Technical Leadership",
-    body:
-      "Co-founder and operator leadership across engineering, product, and business operations — org design, executive alignment, vendor strategy, and accountable ownership when systems are on fire.",
-    icon: "users"
-  },
-  {
-    title: "Advisory & Fractional Leadership",
-    body:
-      "Seed-stage and growth teams, plus selective engagements: fractional CTO/COO, board-ready updates, operating cadence, and hands-on leadership without becoming permanent headcount.",
-    icon: "activity"
-  },
-  {
-    title: "Platform & Reliability Strategy",
-    body:
-      "Infrastructure and reliability programs at scale — incident command, production stability, platform roadmaps, and Linux-grounded judgment that keeps engineering velocity and risk in balance.",
-    icon: "server"
-  }
-];
-
-const projects = [
-  {
-    title: "NullorNaN Systems",
-    body:
-      "Selective infrastructure and platform consulting focused on reliability, automation, operational maturity, and practical engineering leadership.",
-    url: "https://nullornan.com",
-    logo: "nullornan"
-  },
-  {
-    title: "Reliability Lounge",
-    body:
-      "An operator community and content hub for builders focused on real-world infrastructure stories, reliability practice, and systems experience.",
-    url: "https://doghouse.cafe",
-    logo: "reliability-lounge"
-  },
-  {
-    title: "OUR+'R Technologies",
-    body:
-      "Rideshare SaaS focused on safety and sustainability — co-founded and led as technical operator across product, platform, and company operations.",
+    name: "OUR+'R Technologies",
+    role: "Co-Founder & CTO",
+    body: "Building the next layer of infrastructure for operator-led businesses.",
     url: ourPlusRUrl,
-    logo: "our-plus-r"
+    icon: "ourr"
+  },
+  {
+    name: "NullOrNaN Systems",
+    role: "Founder & Principal",
+    body: "Fractional CTO/COO and boutique advisory. Reliability, platform engineering, and operational leadership for teams that need it done right.",
+    url: "https://nullornan.com",
+    icon: "nullornan"
+  },
+  {
+    name: "Reliability Lounge",
+    role: "Founder & Operator",
+    body: "Operator content, reliability writing, and community for people who actually run systems in production.",
+    url: "https://reliabilitylounge.com",
+    icon: "reliability"
   }
 ];
 
-const proofCards = [
+const routes = [
+  {
+    intent: "Work with me",
+    sub: "Fractional / advisory engagements",
+    url: "https://nullornan.com",
+    cta: "nullornan.com",
+    arrow: true
+  },
+  {
+    intent: "Connect or network",
+    sub: "Professional conversations, connections",
+    url: "https://www.linkedin.com/in/matthewcmcgowan",
+    cta: "linkedin.com/in/matthewcmcgowan",
+    arrow: true
+  },
+  {
+    intent: "Talk about my ventures",
+    sub: "OUR+'R, NullOrNaN, Reliability Lounge",
+    url: "https://app.reclaim.ai/m/nan-connects",
+    cta: "NaN Connects — Book time",
+    arrow: true
+  },
+  {
+    intent: "Read operator content",
+    sub: "Reliability writing and community",
+    url: "https://reliabilitylounge.com",
+    cta: "reliabilitylounge.com",
+    arrow: true
+  },
+  {
+    intent: "See my code",
+    sub: "Public repos and technical artifacts",
+    url: "https://github.com/NullOrNaN",
+    cta: "github.com/NullOrNaN",
+    arrow: true
+  }
+];
+
+const metrics = [
   {
     metric: "$2M+",
     label: "AI spend governed",
-    meta: "Q4 2025 · NullorNaN Advisory",
-    body:
-      "Led executive AI cost governance — policy, centralized controls, and accountable spend ownership across the organization.",
-    icon: "savings"
+    meta: "Q4 2025 · $8M annualized",
+    body: "Built governance, centralized controls, and automation for AI workloads."
   },
   {
     metric: "~50%",
-    label: "Downtime reduced",
-    meta: "Q2 2025 · NullorNaN Advisory",
-    body:
-      "Directed a cloud and reliability transformation program with clear executive sponsorship and measurable production outcomes.",
-    icon: "platform"
+    label: "Downtime reduction",
+    meta: "Q2 2025",
+    body: "Cloud transformation using elastic, immutable Kubernetes infrastructure patterns."
   },
   {
-    metric: "4× Faster",
-    label: "Incident command",
-    meta: "Q2 2024 · ASRC Federal",
-    body:
-      "Stood up cross-functional incident leadership across infrastructure, data, security, and cloud — faster resolution with clearer accountability.",
-    icon: "incident"
+    metric: "4×",
+    label: "Incident resolution",
+    meta: "Q2 2024",
+    body: "Led cross-functional incident command across infrastructure, database, security, and cloud."
   },
   {
     metric: "~3×",
-    label: "Uptime improved",
-    meta: "Q1 2023 · ASRC Federal",
-    body:
-      "Owned a platform stability initiative across 120+ systems — prioritization, standards, and program leadership that moved uptime materially.",
-    icon: "uptime"
+    label: "Uptime improvement",
+    meta: "Q1 2023",
+    body: "Platform stability across 120+ systems through automation and configuration standardization."
   }
 ];
 
-const skillGroups = [
-  {
-    title: "Leadership",
-    icon: "leadership",
-    tags: [
-      "Cross-Functional Leadership",
-      "Program Leadership",
-      "Technical Leadership",
-      "Stakeholder Management",
-      "Vendor Management",
-      "Incident Management"
-    ]
-  },
-  {
-    title: "Platform",
-    icon: "platform",
-    tags: [
-      "Linux",
-      "Platform Strategy",
-      "Reliability Programs",
-      "Infrastructure at Scale",
-      "Operational Excellence"
-    ]
-  },
-  {
-    title: "Cloud, AI & Security",
-    icon: "security",
-    tags: [
-      "Cloud Transformation",
-      "AI Governance",
-      "AI Cost Optimization",
-      "Security Programs",
-      "Compliance & Risk"
-    ]
-  }
-];
-
-const closingLinks = [
-  {
-    label: "mattmcg.com",
-    url: mattmcgUrl
-  },
-  {
-    label: "LinkedIn",
-    url: "https://www.linkedin.com/in/matthewcmcgowan"
-  },
-  {
-    label: "OUR+'R Technologies",
-    url: ourPlusRUrl
-  },
-  {
-    label: "NullorNaN Systems",
-    url: "https://nullornan.com"
-  },
-  {
-    label: "Reliability Lounge",
-    url: "https://doghouse.cafe"
-  }
+const footerLinks = [
+  { label: "lethal.coffee", url: "https://lethal.coffee" },
+  { label: "nullornan.com", url: "https://nullornan.com" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/matthewcmcgowan" },
+  { label: "reliabilitylounge.com", url: "https://reliabilitylounge.com" },
+  { label: "github.com/NullOrNaN", url: "https://github.com/NullOrNaN" },
+  { label: "Book a Call", url: "https://app.reclaim.ai/m/nan-connects" }
 ];
 ---
 
@@ -173,57 +122,30 @@ const closingLinks = [
   <body>
     <header class="site-header page-shell">
       <div class="topbar">
-        <div class="brand brand--name" title="Why lethal.coffee? I can drink a lot of coffee and feel almost none of it.">
-          {displayName}
-        </div>
+        <a class="brand" href="/">lethal.coffee</a>
         <nav class="top-links" aria-label="Primary">
-          <a href="#what-i-do">What I Do</a>
-          <a href="#selected-work">Selected Work</a>
-          <a href="#highlights">Highlights</a>
-          <a href="#connect">Connect</a>
-          <a href={nanConnectUrl} target="_blank" rel="noreferrer">The NaN Connect</a>
+          <a href="/about">About</a>
+          <a href="#ventures">Ventures</a>
+          <a href="#where-to-go">Where to Go</a>
+          <a href="#proof">Proof Points</a>
+          <a href="/connect">Connect</a>
         </nav>
       </div>
     </header>
 
     <main class="page-shell">
+
+      <!-- HERO -->
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-header">
-          <p class="eyebrow">{displayName}</p>
-          <h2 id="hero-title">Co-Founder, CTO &amp; COO · Infrastructure &amp; Platform Leader</h2>
-          <div class="hero-roles" aria-label="Current roles">
-            {roleLines.map((line) => (
-              <p>{line}</p>
-            ))}
-          </div>
-        </div>
         <div class="hero-copy">
-          <p class="hero-nickname-note">
-            <strong>Lethal Coffee</strong> is the nickname: I can drink a ton of coffee and have near-zero effect on me — hence lethal.coffee.
-          </p>
+          <p class="eyebrow">Matt McGowan</p>
+          <h2 id="hero-title">Co-Founder, CTO &amp; COO · Infrastructure &amp; Platform Leader.</h2>
           <p class="hero-body">
-            I build and operate production infrastructure, lead incident response, and design platforms that hold up under pressure — as a technical co-founder and operator across product, consulting, and community.
-            <br/><br/>
-            Open to seed-stage conversations, fractional CTO/COO and platform leadership, and selective consulting. My work sits at the intersection of Linux systems, reliability engineering, automation, and executive-level operational leadership.
+            I build and operate production infrastructure, lead incident response, and run ventures at the intersection of systems engineering and organizational leadership.
           </p>
-          <div class="hero-actions">
-            <a
-              class="button button-primary"
-              href="https://www.linkedin.com/in/matthewcmcgowan"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Connect on LinkedIn
-            </a>
-            <a
-              class="button button-secondary"
-              href="https://nullornan.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              NullorNaN
-            </a>
-          </div>
+          <p class="lethal-note">
+            <span class="lethal-label">lethal.coffee</span> — a nickname that stuck. High-octane, occasionally dangerous, best consumed black. This site is the starting point. Find the right lane below.
+          </p>
         </div>
         <div class="hero-media">
           <ResponsiveImage
@@ -231,7 +153,7 @@ const closingLinks = [
             base="/assets/images/profile/profile"
             widths={profileWidths}
             sizes={profileSizes}
-            alt={`${displayName} profile`}
+            alt="Matt McGowan"
             width={200}
             height={200}
             loading="eager"
@@ -239,295 +161,89 @@ const closingLinks = [
         </div>
       </section>
 
-      <section id="what-i-do" aria-labelledby="what-i-do-title">
+      <!-- ACTIVE VENTURES -->
+      <section id="ventures" aria-labelledby="ventures-title">
         <div class="section-heading">
-          <!-- <p class="section-label">What I Do</p> -->
-          <h2 id="what-i-do-title">Org leadership, advisory work, and platform strategy under pressure.</h2>
+          <h2 id="ventures-title">Active ventures.</h2>
+          <p>Three properties. Each has one job.</p>
         </div>
         <div class="grid grid-three">
-          {capabilities.map((item) => (
-            <article class="card">
-              <div class="card-title-row">
-                {item.icon === "activity" && (
-                  <svg class="capability-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M3 12h4l2.25-5 4.5 10 2.25-5H21"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.75"
-                    />
-                  </svg>
+          {vehicles.map((v) => (
+            <article class={`card vehicle-card${v.url ? "" : " no-link"}`}>
+              <div class="vehicle-brand">
+                {v.icon === "ourr" && (
+                  <img class="vehicle-logo" src="/assets/images/ourr.png" alt="" aria-hidden="true" />
                 )}
-                {item.icon === "server" && (
-                  <svg class="capability-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M4 6.5h16v4H4Zm0 7h16v4H4Zm3-5h.01M7 15h.01"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.75"
-                    />
-                  </svg>
+                {v.icon === "nullornan" && (
+                  <img class="vehicle-logo" src="/assets/images/nullornan.png" alt="" aria-hidden="true" />
                 )}
-                {item.icon === "users" && (
-                  <svg class="capability-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM4 19a5 5 0 0 1 10 0m1.5 0a4.5 4.5 0 0 1 4.5-4.5"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.75"
-                    />
-                  </svg>
+                {v.icon === "reliability" && (
+                  <img class="vehicle-logo" src="/assets/images/rl.png" alt="" aria-hidden="true" />
                 )}
-                <h3>{item.title}</h3>
+                <div>
+                  <h3>{v.name}</h3>
+                  <p class="vehicle-role">{v.role}</p>
+                </div>
               </div>
-              <p>{item.body}</p>
+              <p>{v.body}</p>
+              {v.url && (
+                <a class="card-link" href={v.url} target="_blank" rel="noopener noreferrer">Visit →</a>
+              )}
             </article>
           ))}
         </div>
       </section>
 
-      <section id="selected-work" aria-labelledby="selected-work-title">
+      <!-- ROUTING -->
+      <section id="where-to-go" aria-labelledby="routing-title">
         <div class="section-heading">
-          <!-- <p class="section-label">Selected Work</p> -->
-          <h2 id="selected-work-title">A few public entry points into the work.</h2>
-          <p>
-            Public entry points into consulting, community, and the technical work behind the profile.
-          </p>
+          <h2 id="routing-title">Follow the lane that matches your intent.</h2>
         </div>
-        <div class="grid grid-three">
-          {projects.map((project) => (
-            <article class="card">
-              <div class="project-brand">
-                <span class="project-logo" aria-hidden="true">
-                  {project.logo === "nullornan" && (
-                    // <svg viewBox="0 0 32 32">
-                    //   <path
-                    //     d="M7 24V8l6.5 10V8H17v16l-6.5-10V24H7Zm13.5 0c-3.04 0-5.5-2.46-5.5-5.5S17.46 13 20.5 13 26 15.46 26 18.5 23.54 24 20.5 24Zm0-3c1.38 0 2.5-1.12 2.5-2.5S21.88 16 20.5 16 18 17.12 18 18.5 19.12 21 20.5 21Z"
-                    //     fill="currentColor"
-                    //   />
-                    // </svg>
-                    <ResponsiveImage
-                      class="project-logo-img"
-                      base="/assets/images/nullornan/nullornan"
-                      widths={logoWidths}
-                      sizes={logoSizes}
-                      alt="NullorNaN Systems logo"
-                      width={32}
-                      height={32}
-                    />
-                  )}
-                  {project.logo === "reliability-lounge" && (
-                    // <svg viewBox="0 0 32 32">
-                    //   <path
-                    //     d="M6 15.5 16 7l10 8.5V24h-5v-5h-4v5H6v-8.5Zm8-2.5h4"
-                    //     fill="none"
-                    //     stroke="currentColor"
-                    //     stroke-linecap="round"
-                    //     stroke-linejoin="round"
-                    //     stroke-width="2"
-                    //   />
-                    //   <path
-                    //     d="M11.5 19.5c0-1.66 1.57-3 3.5-3s3.5 1.34 3.5 3"
-                    //     fill="none"
-                    //     stroke="currentColor"
-                    //     stroke-linecap="round"
-                    //     stroke-width="2"
-                    //   />
-                    // </svg>
-                    <ResponsiveImage
-                      class="project-logo-img"
-                      base="/assets/images/reliability-lounge/reliability-lounge"
-                      widths={logoWidths}
-                      sizes={logoSizes}
-                      alt="Reliability Lounge logo"
-                      width={32}
-                      height={32}
-                    />
-                  )}
-                  {project.logo === "our-plus-r" && (
-                    <ResponsiveImage
-                      class="project-logo-img"
-                      base="/assets/images/our-plus-r/our-plus-r"
-                      widths={logoWidths}
-                      sizes={logoSizes}
-                      alt="OUR+'R Technologies logo"
-                      width={32}
-                      height={32}
-                    />
-                  )}
-                </span>
-                <h3>{project.title}</h3>
+        <div class="route-list">
+          {routes.map((r) => (
+            <a class="route-row" href={r.url} target="_blank" rel="noopener noreferrer">
+              <div class="route-intent">
+                <span class="route-primary">{r.intent}</span>
+                <span class="route-sub">{r.sub}</span>
               </div>
-              <p>{project.body}</p>
-              <a
-                class="card-link"
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="highlights" aria-labelledby="highlights-title">
-        <div class="section-heading">
-          <!-- <p class="section-label">Operating Highlights</p> -->
-          <h2 id="highlights-title">Leadership outcomes from real operating environments.</h2>
-        </div>
-        <div class="proof-section">
-          <div class="proof-grid">
-            {proofCards.map((card) => (
-              <article class="proof-card">
-                <div class="proof-card-header">
-                  <div>
-                    <div class="proof-metric">
-                      {card.metricValue ? card.metricValue : card.metric}
-                      {card.metricUnit && (
-                        <span class="proof-metric-unit">{card.metricUnit}</span>
-                      )}
-                    </div>
-                    <h3 class="proof-title">{card.label}</h3>
-                  </div>
-                  {card.icon === "savings" && (
-                    <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M12 3v18M8.5 7.5c0-1.38 1.57-2.5 3.5-2.5s3.5 1.12 3.5 2.5S13.93 10 12 10 8.5 8.88 8.5 7.5Zm0 9c0 1.38 1.57 2.5 3.5 2.5s3.5-1.12 3.5-2.5S13.93 14 12 14s-3.5 1.12-3.5 2.5Z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )}
-                  {card.icon === "platform" && (
-                    <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M12 3 4.5 7v10L12 21l7.5-4V7L12 3Zm0 0v18M4.5 7 12 11l7.5-4"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )}
-                  {card.icon === "incident" && (
-                    <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M12 4 4 8v5c0 4.6 2.9 6.95 8 8 5.1-1.05 8-3.4 8-8V8l-8-4Zm0 4v5m0 3h.01"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )}
-                  {card.icon === "uptime" && (
-                    <svg class="proof-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M4 15h4l2-5 4 8 2-5h4M5 19h14M12 5v3"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <p class="proof-meta">{card.meta}</p>
-                <p class="proof-description">{card.body}</p>
-              </article>
-            ))}
-          </div>
-
-          <div class="skills-cluster" aria-label="Skills clusters">
-            {skillGroups.map((group) => (
-              <section class="skill-group" aria-labelledby={`${group.icon}-skills-title`}>
-                <div class="skill-group-header">
-                  {group.icon === "leadership" && (
-                    <svg class="skill-group-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm8 2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3.5 19a4.5 4.5 0 0 1 9 0m1.5 0a4 4 0 0 1 6.5-3.1"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )}
-                  {group.icon === "platform" && (
-                    <svg class="skill-group-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M12 3 5 7v10l7 4 7-4V7l-7-4Zm-4 6h8m-8 3h8m-8 3h5"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )}
-                  {group.icon === "security" && (
-                    <svg class="skill-group-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M12 3 5 6.5V12c0 4.37 2.74 7.03 7 9 4.26-1.97 7-4.63 7-9V6.5L12 3Zm-2.5 9 1.7 1.7 3.8-4.2"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )}
-                  <h3 id={`${group.icon}-skills-title`}>{group.title}</h3>
-                </div>
-                <div class="skill-tags">
-                  {group.tags.map((tag) => <span class="skill-tag">{tag}</span>)}
-                </div>
-              </section>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="connect" aria-labelledby="connect-title" class="closing">
-        <div class="section-heading">
-          <!-- <p class="section-label">Looking for the thread?</p> -->
-          <h2 id="connect-title">Follow the lane that matches the question.</h2>
-        </div>
-        <p class="closing-copy">
-          Start at mattmcg.com for the primary hub. LinkedIn for seed conversations and fractional work,
-          OUR+'R Technologies for the company, NullorNaN for consulting, or Reliability Lounge for community and writing.
-        </p>
-        <div class="link-list" aria-label="External links">
-          {closingLinks.map((link) => (
-            <a href={link.url} target="_blank" rel="noreferrer">
-              {link.label}
+              <span class="route-cta">{r.cta} →</span>
             </a>
           ))}
         </div>
       </section>
+
+      <!-- PROOF POINTS -->
+      <section id="proof" aria-labelledby="proof-title">
+        <div class="section-heading">
+          <h2 id="proof-title">Proof points from real operating environments.</h2>
+        </div>
+        <div class="proof-grid">
+          {metrics.map((m) => (
+            <article class="proof-card">
+              <div class="proof-metric">{m.metric}</div>
+              <h3 class="proof-label">{m.label}</h3>
+              <p class="proof-meta">{m.meta}</p>
+              <p class="proof-body">{m.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
     </main>
 
-    <footer class="page-shell">
-      <p>
-        &copy; 2026 {displayName}.
-        <a href={mattmcgUrl}>mattmcg.com</a> is the primary entry point. Also on lethal.coffee.
-      </p>
+    <footer class="site-footer page-shell">
+      <div class="footer-inner">
+        <p class="footer-name">Matt McGowan</p>
+        <nav class="footer-links" aria-label="External links">
+          {footerLinks.map((l) => (
+            <a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>
+          ))}
+        </nav>
+        <p class="footer-copy">&copy; 2026 Matt McGowan</p>
+      </div>
     </footer>
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1bd1d7c50244959b719cc3bbf367dbd"}'></script><!-- End Cloudflare Web Analytics -->
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c1bd1d7c50244959b719cc3bbf367dbd"}'></script>
   </body>
 </html>
