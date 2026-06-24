@@ -1,13 +1,20 @@
 ---
+import ResponsiveImage from "../components/ResponsiveImage.astro";
+
 const pageTitle = "Matt McGowan";
 const pageDescription =
   "Co-Founder, CTO & COO. Infrastructure and platform leader. Identity hub — find the right lane.";
+
+const profileWidths = [160, 200, 320, 400];
+const profileSizes = "(max-width: 640px) 140px, (max-width: 900px) 160px, 200px";
+const ourPlusRUrl = "https://getride.plus";
 
 const vehicles = [
   {
     name: "OUR+'R Technologies",
     role: "Co-Founder & CTO",
     body: "Building the next layer of infrastructure for operator-led businesses.",
+    url: ourPlusRUrl,
     icon: "ourr"
   },
   {
@@ -141,13 +148,15 @@ const footerLinks = [
           </p>
         </div>
         <div class="hero-media">
-          <img
+          <ResponsiveImage
             class="hero-profile"
-            src="/assets/images/matt.webp"
+            base="/assets/images/profile/profile"
+            widths={profileWidths}
+            sizes={profileSizes}
             alt="Matt McGowan"
+            width={200}
+            height={200}
             loading="eager"
-            width="200"
-            height="200"
           />
         </div>
       </section>
