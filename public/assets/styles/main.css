@@ -187,6 +187,18 @@ section {
     font-weight: 700;
 }
 
+.hero-raise {
+    max-width: 60ch;
+    margin-top: 0.85rem;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.hero-raise a {
+    color: var(--accent-strong);
+}
+
 .hero-body {
     max-width: 60ch;
     margin-top: 1.25rem;
@@ -265,6 +277,13 @@ section {
     font-size: 0.95rem;
 }
 
+.card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: auto;
+}
+
 .card-link {
     margin-top: auto;
     text-decoration: none;
@@ -272,6 +291,10 @@ section {
     font-weight: 600;
     font-size: 0.9rem;
     transition: color 160ms ease, letter-spacing 160ms ease;
+}
+
+.card-links .card-link {
+    margin-top: 0;
 }
 
 .card:hover .card-link,

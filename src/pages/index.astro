@@ -7,14 +7,18 @@ const pageDescription =
 
 const profileWidths = [160, 200, 320, 400];
 const profileSizes = "(max-width: 640px) 140px, (max-width: 900px) 160px, 200px";
-const ourPlusRUrl = "https://getride.plus";
+const ourPlusRProductUrl = "https://getride.plus";
+const ourPlusRRaiseUrl = "https://getourr.net";
 
 const vehicles = [
   {
     name: "OUR+'R Technologies",
-    role: "Co-Founder & CTO",
+    role: "Co-Founder, CTO & COO",
     body: "Building the next layer of infrastructure for operator-led businesses.",
-    url: ourPlusRUrl,
+    links: [
+      { label: "Product →", url: ourPlusRProductUrl },
+      { label: "Pre-seed raise →", url: ourPlusRRaiseUrl }
+    ],
     icon: "ourr"
   },
   {
@@ -140,6 +144,9 @@ const footerLinks = [
         <div class="hero-copy">
           <p class="eyebrow">Matt McGowan</p>
           <h2 id="hero-title">Co-Founder, CTO &amp; COO · Infrastructure &amp; Platform Leader.</h2>
+          <p class="hero-raise">
+            OUR+'R is currently in pre-seed raise — <a href={ourPlusRRaiseUrl} target="_blank" rel="noopener noreferrer">interest form at getourr.net</a>.
+          </p>
           <p class="hero-body">
             I build and operate production infrastructure, lead incident response, and run ventures at the intersection of systems engineering and organizational leadership.
           </p>
@@ -169,7 +176,7 @@ const footerLinks = [
         </div>
         <div class="grid grid-three">
           {vehicles.map((v) => (
-            <article class={`card vehicle-card${v.url ? "" : " no-link"}`}>
+            <article class={`card vehicle-card${v.url || v.links ? "" : " no-link"}`}>
               <div class="vehicle-brand">
                 {v.icon === "ourr" && (
                   <img class="vehicle-logo" src="/assets/images/ourr.png" alt="" aria-hidden="true" />
@@ -186,7 +193,13 @@ const footerLinks = [
                 </div>
               </div>
               <p>{v.body}</p>
-              {v.url && (
+              {v.links ? (
+                <div class="card-links">
+                  {v.links.map((link) => (
+                    <a class="card-link" href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                  ))}
+                </div>
+              ) : v.url && (
                 <a class="card-link" href={v.url} target="_blank" rel="noopener noreferrer">Visit →</a>
               )}
             </article>
