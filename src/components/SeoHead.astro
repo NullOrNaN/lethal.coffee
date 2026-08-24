@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  type?: "website" | "article";
+  image?: string;
+  faqs?: { question: string; answer: string }[];
+}
+
+const { title, description, canonical, type = "website", image = "https://lethal.coffee/assets/images/profile2/profile2-400.webp", faqs = [] } = Astro.props;
+const graph = [
+  {
+    "@type": "Person",
+    "@id": "https://lethal.coffee/#person",
+    name: "Matt McGowan",
+    alternateName: ["MattMcG", "Lethal Coffee", "lethal.coffee"],
+    url: "https://lethal.coffee/",
+    jobTitle: "Principal Engineer and Technology Executive",
+    description: "Operator, co-founder, and infrastructure leader focused on platform engineering, reliability, and operational execution.",
+    image,
+    sameAs: ["https://www.linkedin.com/in/matthewcmcgowan", "https://github.com/NullOrNaN"]
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://lethal.coffee/#website",
+    url: "https://lethal.coffee/",
+    name: "MattMcG / Lethal Coffee",
+    alternateName: ["MattMcG", "Lethal Coffee", "lethal.coffee"],
+    publisher: { "@id": "https://lethal.coffee/#person" },
+    inLanguage: "en-US"
+  },
+  {
+    "@type": "WebPage",
+    "@id": `${canonical}#webpage`,
+    url: canonical,
+    name: title,
+    description,
+    isPartOf: { "@id": "https://lethal.coffee/#website" },
+    about: { "@id": "https://lethal.coffee/#person" },
+    inLanguage: "en-US"
+  },
+  ...(faqs.length ? [{ "@type": "FAQPage", mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) }] : [])
+];
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content="Matt McGowan" />
+<meta name="application-name" content="MattMcG / Lethal Coffee" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="googlebot" content="index, follow" />
+<meta name="theme-color" content="#04070c" />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content={type} />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="MattMcG / Lethal Coffee" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": graph })} />

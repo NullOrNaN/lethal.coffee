@@ -1,0 +1,11 @@
+---
+import { projects } from "../../data/projects";
+import SeoHead from "../../components/SeoHead.astro";
+export function getStaticPaths() { return projects.map((project) => ({ params: { slug: project.slug }, props: { project } })); }
+const { project } = Astro.props;
+const pageTitle = `Matt McGowan · ${project.title}`;
+---
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><SeoHead title={pageTitle} description={project.summary} canonical={`https://lethal.coffee/projects/${project.slug}`} type="article" /><link rel="stylesheet" href="/assets/styles/main.css" /></head>
+<body><header class="site-header page-shell"><div class="topbar"><a class="brand" href="/" aria-label="MattMcG / Lethal Coffee home">MattMcG / Lethal Coffee</a><nav class="top-links" aria-label="Primary"><a href="/about">About</a><a href="/projects" aria-current="page">Projects</a><a href="/#ventures">Ventures</a><a href="/connect">Connect</a></nav></div></header>
+<main class="page-shell project-detail"><a class="back-link" href="/projects">← All selected work</a><article><header class="project-hero"><p class="eyebrow">{project.number} · {project.eyebrow}</p><h1>{project.title}</h1><p>{project.summary}</p><div class="project-meta"><div><span>Outcome</span><strong>{project.outcome}</strong></div><div><span>Period</span><strong>{project.period}</strong></div><div><span>Role</span><strong>{project.role}</strong></div></div></header><div class="project-body"><section><p class="section-kicker">The challenge</p><h2>Make the hard work tractable.</h2><p>{project.challenge}</p></section><section><p class="section-kicker">The approach</p><ol class="approach-list">{project.approach.map((step, index) => <li><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}</ol></section><section class="results-panel"><p class="section-kicker">What changed</p><ul>{project.results.map((result) => <li>{result}</li>)}</ul><div class="tag-row">{project.stack.map((item) => <span>{item}</span>)}</div></section></div></article></main></body></html>

@@ -1,0 +1,10 @@
+---
+import { projects } from "../../data/projects";
+import SeoHead from "../../components/SeoHead.astro";
+const pageTitle = "Matt McGowan · Selected Work";
+const pageDescription = "Selected infrastructure, platform, and operational leadership work by Matt McGowan.";
+---
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><SeoHead title={pageTitle} description={pageDescription} canonical="https://lethal.coffee/projects" /><link rel="stylesheet" href="/assets/styles/main.css" /></head>
+<body><header class="site-header page-shell"><div class="topbar"><a class="brand" href="/" aria-label="MattMcG / Lethal Coffee home">MattMcG / Lethal Coffee</a><nav class="top-links" aria-label="Primary"><a href="/about">About</a><a href="/projects" aria-current="page">Projects</a><a href="/#ventures">Ventures</a><a href="/connect">Connect</a></nav></div></header>
+<main class="page-shell project-index"><header class="page-intro"><p class="eyebrow">Selected work</p><h1>Systems that hold when it matters.</h1><p>Selected infrastructure, platform, and operating-model work. Each brief looks at the problem, the operating approach, and the result.</p></header><div class="project-list">{projects.map((project) => <a class="project-list-item" href={`/projects/${project.slug}`}><span class="project-number">{project.number}</span><span class="project-list-copy"><span class="project-list-title">{project.title}</span><span>{project.summary}</span></span><span class="project-outcome">{project.outcome} <span aria-hidden="true">↗</span></span></a>)}</div></main></body></html>

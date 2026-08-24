@@ -1,4 +1,5 @@
 ---
+import SeoHead from "../components/SeoHead.astro";
 const pageTitle = "Matt McGowan · About";
 const pageDescription =
   "Operator, co-founder, and infrastructure leader. Who I am and what I'm focused on.";
@@ -9,20 +10,16 @@ const pageDescription =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-    <meta name="theme-color" content="#0a0f14" />
-    <link rel="canonical" href="https://lethal.coffee/about" />
+    <SeoHead title={pageTitle} description={pageDescription} canonical="https://lethal.coffee/about" type="article" />
     <link rel="stylesheet" href="/assets/styles/main.css" />
   </head>
   <body>
     <header class="site-header page-shell">
       <div class="topbar">
-        <a class="brand" href="/">lethal.coffee</a>
+        <a class="brand" href="/" aria-label="MattMcG / Lethal Coffee home">MattMcG / Lethal Coffee</a>
         <nav class="top-links" aria-label="Primary">
+          <a href="/projects">Projects</a>
           <a href="/#ventures">Ventures</a>
-          <a href="/#where-to-go">Where to Go</a>
-          <a href="/#proof">Proof Points</a>
           <a href="/connect">Connect</a>
         </nav>
       </div>
