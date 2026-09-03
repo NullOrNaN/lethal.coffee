@@ -1,36 +1,49 @@
 ---
+import SeoHead from "../components/SeoHead.astro";
 const pageTitle = "Matt McGowan · Connect";
 const pageDescription =
-  "Find the right lane. Direct routing to the right destination based on what you need — no contact form.";
+  "Direct routing for recruiters, founders, executive teams, GTM partners, and leadership opportunities.";
 
 const routes = [
   {
-    title: "Fractional CTO/COO or advisory work",
-    body: "Boutique infrastructure and platform leadership engagements.",
+    title: "Fractional CTO, vCIO, or vCOO leadership",
+    body: "Advisory-first executive leadership for teams that need someone in the chair who owns outcomes.",
     url: "https://nullornan.com",
     cta: "nullornan.com"
   },
   {
-    title: "Connect or network",
-    body: "LinkedIn for professional conversations and connections.",
+    title: "Principal SRE consulting",
+    body: "Hands-on reliability leadership across architecture, incidents, automation, cloud, and platform operations.",
+    url: "https://nullornan.com",
+    cta: "nullornan.com"
+  },
+  {
+    title: "Scoped technical projects",
+    body: "SRE, transformation, and leadership-driven projects with scope and timeline set in writing.",
+    url: "https://nullornan.com",
+    cta: "nullornan.com"
+  },
+  {
+    title: "Recruiters and FTE opportunities",
+    body: "Director through CXO scope across full-time, contract, and part-time opportunities.",
     url: "https://www.linkedin.com/in/matthewcmcgowan",
     cta: "linkedin.com/in/matthewcmcgowan"
   },
   {
-    title: "Talk about my ventures",
-    body: "Book time to discuss OUR+'R, NullOrNaN, or Reliability Lounge.",
-    url: "https://app.reclaim.ai/m/nan-connects",
-    cta: "NaN Connects — Book time"
+    title: "Direct connection",
+    body: "Send a free LinkedIn InMail with your pitch, context, and the impact you want to create.",
+    url: "https://www.linkedin.com/in/matthewcmcgowan",
+    cta: "Send a LinkedIn InMail"
   },
   {
     title: "Operator content and reliability writing",
-    body: "Reliability Lounge — community and essays for infrastructure builders.",
+    body: "Reliability Lounge: community and essays for infrastructure builders.",
     url: "https://reliabilitylounge.com",
     cta: "reliabilitylounge.com"
   },
   {
     title: "Code and technical projects",
-    body: "GitHub — hobbyist to professional infrastructure and platform work.",
+    body: "GitHub: hobbyist to professional infrastructure and platform work.",
     url: "https://github.com/NullOrNaN",
     cta: "github.com/NullOrNaN"
   }
@@ -42,21 +55,17 @@ const routes = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-    <meta name="theme-color" content="#0a0f14" />
-    <link rel="canonical" href="https://lethal.coffee/connect" />
+    <SeoHead title={pageTitle} description={pageDescription} canonical="https://lethal.coffee/connect" />
     <link rel="stylesheet" href="/assets/styles/main.css" />
   </head>
   <body>
     <header class="site-header page-shell">
       <div class="topbar">
-        <a class="brand" href="/">lethal.coffee</a>
+        <a class="brand" href="/" aria-label="MattMcG / Lethal Coffee home">MattMcG / Lethal Coffee</a>
         <nav class="top-links" aria-label="Primary">
           <a href="/about">About</a>
+          <a href="/projects">Projects</a>
           <a href="/#ventures">Ventures</a>
-          <a href="/#where-to-go">Where to Go</a>
-          <a href="/#proof">Proof Points</a>
           <a href="/connect" aria-current="page">Connect</a>
         </nav>
       </div>

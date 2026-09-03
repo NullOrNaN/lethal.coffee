@@ -9,7 +9,7 @@ const logoWidths = [32, 48, 64, 96];
 const profileWidths = [160, 200, 320, 400];
 const logoBg = { r: 4, g: 7, b: 12, alpha: 1 };
 
-/** @type {{ id: string; source: string; widths: number[]; fit: "contain" | "cover" }[]} */
+/** @type {{ id: string; source?: string; sourcePath?: string; widths: number[]; fit: "contain" | "cover"; grayscale?: boolean }[]} */
 const assets = [
   {
     id: "our-plus-r",
@@ -34,6 +34,13 @@ const assets = [
     source: "profile-source.webp",
     widths: profileWidths,
     fit: "cover"
+  },
+  {
+    id: "profile2",
+    sourcePath: path.join(root, "public/assets/images/matt2.png"),
+    widths: profileWidths,
+    fit: "cover",
+    grayscale: true
   }
 ];
 
@@ -66,7 +73,7 @@ async function ensureWebpMaster(sourceFile) {
   return webpPath;
 }
 
-async function writeVariants({ id, masterPath, widths, fit }) {
+async function writeVariants({ id, masterPath, widths, fit, grayscale = false }) {
   const meta = await sharp(masterPath).metadata();
   const maxWidth = meta.width ?? 0;
   const targetWidths = widths.filter((w) => w <= maxWidth);
@@ -80,9 +87,10 @@ async function writeVariants({ id, masterPath, widths, fit }) {
       position: "centre",
       ...(fit === "contain" ? { background: logoBg } : {})
     };
-    await sharp(masterPath)
-      .resize(width, width, resizeOptions)
-      .webp({ quality: 82, effort: 4 })
+    let image = sharp(masterPath).resize(width, width, resizeOptions);
+    if (grayscale) image = image.grayscale();
+    await image
+      .webp({ quality: grayscale ? 78 : 82, effort: grayscale ? 6 : 4, smartSubsample: grayscale })
       .toFile(outPath);
     console.log(`wrote ${path.relative(root, outPath)}`);
   }
@@ -91,12 +99,13 @@ async function writeVariants({ id, masterPath, widths, fit }) {
 await fs.mkdir(sourcesDir, { recursive: true });
 
 for (const asset of assets) {
-  const masterPath = await ensureWebpMaster(asset.source);
+  const masterPath = asset.sourcePath ?? await ensureWebpMaster(asset.source);
   await writeVariants({
     id: asset.id,
     masterPath,
     widths: asset.widths,
-    fit: asset.fit
+    fit: asset.fit,
+    grayscale: asset.grayscale
   });
 }
 
